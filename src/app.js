@@ -62,7 +62,7 @@ app.post('/payment',
 
         const accountsJSON = JSON.stringify(accounts);
 
-        fs.writeFileSync(path.join(__dirname,'json/accounts.json'),accountsJSON,{encoding:'utf8'});
+        fs.writeFileSync(path.join(__dirname, 'json','accounts.json'), accountsJSON, 'utf8');
 
         res.render('payment', {message : 'Payment Successful', account: accounts.credit});
     }
@@ -85,7 +85,7 @@ app.post('/transfer',
 
         const accountsJSON = JSON.stringify(accounts);
 
-        fs.writeFileSync(path.join(__dirname,'json/accounts.json'),accountsJSON,{encoding:'utf8'});
+        fs.writeFileSync(path.join(__dirname, 'json','accounts.json'), accountsJSON, 'utf8');
         fs.writeFileSync(path.join(__dirname,'json/accounts_backup.json'),accountData,{encoding:'utf8'});
 
         res.render('transfer',{message:'Transfer Completed'});
